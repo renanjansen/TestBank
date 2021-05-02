@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="Pt-br">
 
@@ -9,8 +13,14 @@
 </head>
 
 <body>
-    <form name="senhaLogin" action="php/contaBancaria.php" method="POST" enctype="multipart/form-data">
+    <?php
+    $senhaInvalidada = isset($_SESSION['senhaInvalida'])
+        ?: $_SESSION['senhaInvalida'];
+    ?>
+    <form name="senhaLogin" action="php/contaBancaria.php" 
+    method="POST" enctype="multipart/form-data">
         <h1>Bem-vindo ao Seu Banco</h1>
+
         <label for="senha">Digite a sua senha:</label><br>
         <input type="number" id="senha" name="senha">
         <input type="submit" value="Enviar" id="btnEnviar">

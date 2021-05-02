@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
 <?php
+
+session_start();
+
+
+
 $BR = "<br>";
 $HR = "<hr>";
 $SENHA = "12345";
@@ -16,8 +12,11 @@ $senhaDigitada = $_POST['senha'];
 
 $cliente = ["Renan Jansen", "0000123-0", 10000.00];
 $nome = $cliente[0];
+$_SESSION['nome'] = $nome;
 $conta = $cliente[1];
+$_SESSION['conta'] = $conta;
 $saldo = $cliente[2];
+$_SESSION['saldo'] = $saldo;
 
 if ($senhaDigitada == $SENHA) {
 
@@ -28,11 +27,24 @@ if ($senhaDigitada == $SENHA) {
     echo ("Saldo: " . $saldo . $BR);
     echo ($HR);
     echo ($BR);
-} else {
-
-    echo 'Senha inválida!';
+    
+} else if (empty($senhaDigitada) || $senhaDigitada != $SENHA) {
+    $_SESSION['senhaInvalida'] = $senhaInvalida = 'Senha inválida!';
+    echo $senhaInvalida;
+    return;
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conta</title>
+</head>
+
+
 
 <body>
   <h1>Bem-vindo a sua conta!</h1>
