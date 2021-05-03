@@ -6,20 +6,48 @@ $BR = "<br>";
 $HR = "<hr>";
 $valor = $_POST['valor'];
 $operacao = $_POST['operacao'];
+
+
+
+   
+
 switch ($operacao) {
 case "saque":
+
         $_SESSION['saldo'] -= $valor;
+        $msg = "Saque no valor de ".$valor;
+    
+      
+           
+           
+    
+        
+        
+    
     break;
-case "deposito":
+case "deposito": 
+
         $_SESSION['saldo'] += $valor;
+        $msg = "Depósito no valor de ".$valor;
+    
+        
+        
+    
+    
     break;
+case "extrato": header('Location: extrato.php');
+    break;    
 }
+
+array_push($_SESSION['historicoDeOperacoes'], $msg);
 
 echo ("Nome: " . $_SESSION['nome'] . $BR);
 
 echo ("Conta: " . $_SESSION['conta'] . $BR);
 
 echo ("Saldo: " . $_SESSION['saldo'] . $BR);
+
+
 echo ($HR);
 echo ($BR);
 

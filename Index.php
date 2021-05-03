@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -13,10 +14,7 @@ session_start();
 </head>
 
 <body>
-    <?php
-    $senhaInvalidada = isset($_SESSION['senhaInvalida'])
-        ?: $_SESSION['senhaInvalida'];
-    ?>
+    
     <form name="senhaLogin" action="php/contaBancaria.php" 
     method="POST" enctype="multipart/form-data">
         <h1>Bem-vindo ao Seu Banco</h1>

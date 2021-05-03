@@ -10,6 +10,11 @@ $SENHA = "12345";
 $senhaDigitada = $_POST['senha'];
 
 
+//array que recebe historico de saques e depósitos
+$_SESSION['historicoDeOperacoes'] = [];
+
+
+
 $cliente = ["Renan Jansen", "0000123-0", 10000.00];
 $nome = $cliente[0];
 $_SESSION['nome'] = $nome;
@@ -29,7 +34,7 @@ if ($senhaDigitada == $SENHA) {
     echo ($BR);
     
 } else if (empty($senhaDigitada) || $senhaDigitada != $SENHA) {
-    $_SESSION['senhaInvalida'] = $senhaInvalida = 'Senha inválida!';
+    $_SESSION['senhaInvalida'] = $senhaInvalida = '<h1>Senha inválida!</h1>';
     echo $senhaInvalida;
     return;
 }
@@ -47,7 +52,7 @@ if ($senhaDigitada == $SENHA) {
 
 
 <body>
-  <h1>Bem-vindo a sua conta!</h1>
+  <h1>Bem-vindo a sua conta <?php echo $_SESSION['nome']; ?> !</h1>
   <form name="operacoes" action="operacoes.php" method="POST"  
   enctype="multipart/form-data">
   <label for="valor">Digite o valor que deseja operar:</label><br>
