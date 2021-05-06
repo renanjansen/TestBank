@@ -1,8 +1,3 @@
-<?php
-session_start();
-
-?>
-
 <!DOCTYPE html>
 <html lang="Pt-br">
 
@@ -15,7 +10,7 @@ session_start();
 
 <body>
     
-    <form name="senhaLogin" action="php/contaBancaria.php" 
+    <form name="senhaLogin" action="contaBancaria.php" 
     method="POST" enctype="multipart/form-data">
         <h1>Bem-vindo ao Seu Banco</h1>
 

@@ -36,6 +36,7 @@ case "deposito":
     
     break;
 case "extrato": header('Location: extrato.php');
+                $valor = 1;
     break;    
 }
 
@@ -63,11 +64,11 @@ echo ($BR);
 </head>
 
 <body>
-    <h1>Bem-vindo a sua conta!</h1>
+    <h1>Bem-vindo a sua conta <?php echo $_SESSION['nome']; ?> !</h1>
     <form name="operacoes" action="operacoes.php" method="POST" 
     enctype="multipart/form-data">
         <label for="valor">Digite o valor que deseja operar:</label><br>
-        <input type="number" id="valor" name="valor">
+        <input type="number" id="valor" name="valor" required>
         <label for="operacao">Escolha sua operação:</label>
         <select name="operacao" id="operacao">
             <option value="saque" name="saque" id="saque">Saque</option>

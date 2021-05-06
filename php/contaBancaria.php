@@ -34,9 +34,16 @@ if ($senhaDigitada == $SENHA) {
     echo ($BR);
     
 } else if (empty($senhaDigitada) || $senhaDigitada != $SENHA) {
-    $_SESSION['senhaInvalida'] = $senhaInvalida = '<h1>Senha inválida!</h1>';
-    echo $senhaInvalida;
+    $_SESSION['senhaInvalida'] = '<script>
+    alert("Senha inválida!");
+  </script>';
+    echo $_SESSION['senhaInvalida'];
+    require 'Index.php';
     return;
+    
+    
+  
+    
 }
 ?>
 <!DOCTYPE html>
@@ -56,7 +63,7 @@ if ($senhaDigitada == $SENHA) {
   <form name="operacoes" action="operacoes.php" method="POST"  
   enctype="multipart/form-data">
   <label for="valor">Digite o valor que deseja operar:</label><br>
-  <input type="number" id="valor" name="valor">
+  <input type="number" id="valor" name="valor" required>
   <label for="operacao">Escolha sua operação:</label>
   <select name="operacao" id="operacao">
     <option value="saque" name="saque" id="saque">Saque</option>
