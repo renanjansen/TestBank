@@ -30,8 +30,10 @@ if ($senhaDigitada == $SENHA) {
     echo ("Conta: " . $conta . $BR);
 
     echo ("Saldo: " . $saldo . $BR);
+    echo("<input type='button' value='sair' onclick=window.location.href='./Index.php'>");
     echo ($HR);
     echo ($BR);
+    
     
 } else if (empty($senhaDigitada) || $senhaDigitada != $SENHA) {
     $_SESSION['senhaInvalida'] = '<script>
@@ -68,9 +70,9 @@ if ($senhaDigitada == $SENHA) {
   <select name="operacao" id="operacao">
     <option value="saque" name="saque" id="saque">Saque</option>
     <option  value="deposito" name="deposito" id="deposito">Depósito</option>
-    <option value="extrato" name="extrato" id="deposito">Extrato</option>
   </select>
   <input type="submit" value="Ecolher" id="btnEscolher">
+  <input type="button" value="Extrato" onclick="window.location.href='./extrato.php'">
 
   </form>
   

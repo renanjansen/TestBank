@@ -35,8 +35,9 @@ case "deposito":
     
     
     break;
-case "extrato": header('Location: extrato.php');
-                $valor = 1;
+case "extrato": 
+  header('Location: extrato.php');
+                
     break;    
 }
 
@@ -47,7 +48,7 @@ echo ("Nome: " . $_SESSION['nome'] . $BR);
 echo ("Conta: " . $_SESSION['conta'] . $BR);
 
 echo ("Saldo: " . $_SESSION['saldo'] . $BR);
-
+echo("<input type='button' value='sair' onclick=window.location.href='./Index.php'>");
 
 echo ($HR);
 echo ($BR);
@@ -73,9 +74,9 @@ echo ($BR);
         <select name="operacao" id="operacao">
             <option value="saque" name="saque" id="saque">Saque</option>
             <option value="deposito" name="deposito" id="deposito">Depósito</option>
-            <option value="extrato" name="extrato" id="deposito">Extrato</option>
         </select>
         <input type="submit" value="Ecolher" id="btnEscolher">
+         <input type="button" value="Extrato" onclick="window.location.href='./extrato.php'">
 
     </form>
 
