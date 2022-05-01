@@ -48,7 +48,7 @@ echo ("Nome: " . $_SESSION['nome'] . $BR);
 echo ("Conta: " . $_SESSION['conta'] . $BR);
 
 echo ("Saldo: " . $_SESSION['saldo'] . $BR);
-echo("<input type='button' value='sair' onclick=window.location.href='./Index.php'>");
+echo("<input type='button' value='sair' onclick=window.location.href='./index.html'>");
 
 echo ($HR);
 echo ($BR);

@@ -30,7 +30,7 @@ if ($senhaDigitada == $SENHA) {
     echo ("Conta: " . $conta . $BR);
 
     echo ("Saldo: " . $saldo . $BR);
-    echo("<input type='button' value='sair' onclick=window.location.href='./Index.php'>");
+    echo("<input type='button' value='sair' onclick=window.location.href='./index.html'>");
     echo ($HR);
     echo ($BR);
     
@@ -40,7 +40,7 @@ if ($senhaDigitada == $SENHA) {
     alert("Senha inválida!");
   </script>';
     echo $_SESSION['senhaInvalida'];
-    require 'Index.php';
+    require 'index.html';
     return;
     
     
